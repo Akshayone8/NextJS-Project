@@ -7,3 +7,7 @@
 
 <!-- to avoid conflicts in between components css and global css if you are using same class name nextjs provides us with .module.css to know more u can check i have used container class in both navbar and body  -->
 <!-- "usePathName" hook is used to check which nav bar link is active  -->
+
+# How TO add Images in the project 
+
+# you can add them in public folder and by default nextjs couldn't take images from external sources for this u chave to add config code in next.config.mjs file 
