@@ -11,3 +11,5 @@
 # How TO add Images in the project 
 
 # you can add them in public folder and by default nextjs couldn't take images from external sources for this u chave to add config code in next.config.mjs file 
+
+pages are created in app folder and components are created separatley 
