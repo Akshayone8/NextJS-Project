@@ -67,35 +67,52 @@ import styles from "./blog.module.css";
 
 // FETCH DATA FROM API
 
-const getData = async () => {
-const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+// const getData = async () => {
+// const res = await fetch("https://jsonplaceholder.typicode.com/posts");
 
-if (!res.ok) {
-throw new Error("Something went wrong");
-}
-return res.json();
-};
+// if (!res.ok) {
+// throw new Error("Something went wrong");
+// }
+// return res.json();
+// };
 
-const BlogPage = async () => {
-// FETCH DATA WITH AN API
-const posts = await getData();
+// const BlogPage = async () => {
+// // FETCH DATA WITH AN API
+// const posts = await getData();
 
-// FETCH DATA WITHOUT AN API
-const posts = await getPosts();
+// // FETCH DATA WITHOUT AN API
+// const posts = await getPosts();
 
-return (
+// return (
 
-<div className={styles.container}>
-{posts.map((post) => (
-<div className={styles.post} key={post.id}>
-<PostCard post={post} />
-</div>
-))}
-</div>
-);
-};
+// <div className={styles.container}>
+// {posts.map((post) => (
+// <div className={styles.post} key={post.id}>
+// <PostCard post={post} />
+// </div>
+// ))}
+// </div>
+// );
+// };
 
-export default BlogPage;
+// export default BlogPage;
 
 // it refreshes the page ervery 1hr if we use revalidate  
 const response = await fetch("https://jsonplaceholder.typicode.com/posts",{next:{revalidate:3600}})
+
+// we also show how to fetch the data from API and without using an API
+
+// Making Application FullStack using MangooDB Atlas and Mangoos
+        // - I Signedup to MangoDB Account 
+        // - created Cluster 
+        // - went to database access and check the password 
+        // - went to Network Access changes the IP address 
+        // - went to Database  -> connect to NodeJS options 
+        // - we get connection code that we need to copy and paste it in .env file 
+        // - Now we arre going to use mangoose to use install it using "npm i mongoose@8.0.0"
+        // - Now we have to make a connection to our code 
+        // created a utils.js file inside lib and written everything and then started creating models.js 
+        // - See how to create models from mangoose website 
+        // - we have created user schema and post schema   
+        // - go to mongodb atlas and click on browse collection 
+        // - created a user and ppost here
