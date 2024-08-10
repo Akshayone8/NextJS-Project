@@ -1,18 +1,19 @@
-const { default: mongoose } = require("mongoose");
+import mongoose from "mongoose";
 
 const connection = {};
 
-const connectTodb = async () => {
-  // Or:
+const connectToDb = async () => {
+  if (connection.isConnected) {
+    console.log("Using existing connection");
+    return;
+  }
   try {
-    if (connection.isConnected) {
-      console.log("using existing connection");
-      return;
-    }
     const db = await mongoose.connect(process.env.MONGO);
-    connection.isConnected = db.connection[0].readyState;
+    connection.isConnected = db.connections[0].readyState;
   } catch (error) {
     console.log(error);
     throw new Error(error);
   }
 };
+
+export default connectToDb;

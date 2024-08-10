@@ -6,7 +6,7 @@ import { getPost } from "@/lib/data";
 
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -16,6 +16,7 @@ const getData = async (slug) => {
 };
 
 export const generateMetadata = async ({ params }) => {
+  //u can directly distructure params here and get the slug id (2hr:15 )
   const { slug } = params;
 
   const post = await getPost(slug);
@@ -27,21 +28,23 @@ export const generateMetadata = async ({ params }) => {
 };
 
 const SinglePostPage = async ({ params }) => {
+  //u can directly distructure params here and get the slug id
   const { slug } = params;
-
+  console.log(slug);
   // FETCH DATA WITH AN API
-  const post = await getData(slug);
+
+  // const post = await getData(slug);
 
   // FETCH DATA WITHOUT AN API
-  // const post = await getPost(slug);
+
+  const post = await getPost(slug);
 
   return (
     <div className={styles.container}>
-      {post.img && (
-        <div className={styles.imgContainer}>
-          <Image src={post.img} alt="" fill className={styles.img} />
-        </div>
-      )}
+      <div className={styles.imgContainer}>
+        <Image src={post.img} alt="" fill className={styles.img} />
+      </div>
+
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.detail}>
@@ -53,6 +56,7 @@ const SinglePostPage = async ({ params }) => {
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>
+              01.01.2024
               {post.createdAt.toString().slice(4, 16)}
             </span>
           </div>

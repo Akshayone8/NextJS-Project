@@ -1,8 +1,9 @@
 import { Post, User } from "./models";
-import { connectToDb } from "./utils";
+import connectToDb from "./utils";
 import { unstable_noStore as noStore } from "next/cache";
 
 // TEMPORARY DATA
+
 // const users = [
 //   { id: 1, name: "John" },
 //   { id: 2, name: "Jane" },
@@ -19,10 +20,10 @@ export const getPosts = async () => {
   try {
     connectToDb();
     const posts = await Post.find();
+
     return posts;
   } catch (err) {
     console.log(err);
-    // throw new Error("Failed to fetch posts!");
   }
 };
 

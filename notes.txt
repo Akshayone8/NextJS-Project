@@ -6,11 +6,11 @@
 <!-- Styles  -->
 
 <!-- to avoid conflicts in between components css and global css if you are using same class name nextjs provides us with .module.css to know more u can check i have used container class in both navbar and body  -->
-<!-- "usePathName" hook is used to check which nav bar link is active  -->
+<!--  usePathname is a Client Component hook that lets you read the current URL's pathname. -->
 
 # How TO add Images in the project
 
-# you can add them in public folder and by default nextjs couldn't take images from external sources for this u chave to add config code in next.config.mjs file
+# you can add them in public folder and by default nextjs couldn't take images from external sources for this u have to add config code in next.config.mjs file
 
 pages are created in app folder and components are created separatley
 
@@ -36,7 +36,8 @@ pages are created in app folder and components are created separatley
             return <HyderdationTestNoSSR/>
         }
 
--> what if i wrapped client component around server component ? it still be a server side component.
+-> what if i wrapped client component around server component ? 
+    it still be a server side component.
 
                                     NAVIGATION
 
